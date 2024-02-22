@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Input GRIB file
-input_grib="/home/daniele/Documenti/PhD_Cologne/Case_Studies/ERA5/download.grib"
+input_grib="/home/daniele/Documenti/PhD_Cologne/Case_Studies/ERA5/Complete_ERA5_global_atmospheric_reanalysis/2021-07-14_merged.grib"
 
 # Output directory
-output_dir="/home/daniele/Documenti/PhD_Cologne/Case_Studies/ERA5/"
+output_dir="/home/daniele/Documenti/PhD_Cologne/Case_Studies/ERA5/Complete_ERA5_global_atmospheric_reanalysis/"
 
 # Year and Month of the data
 year="2021"
@@ -34,7 +34,7 @@ for hourly_file in ${temp_dir}/output*; do
         day=$(basename $daily_file | sed -r 's/day_[0-9]{2}_([0-9]{2}).*/\1/')
 
         # Construct the new file name
-        new_filename="${output_dir}ERA5_NWC_NWP_${year}-${month}-${day}T00:00:00Z_0${hour}.grib"
+        new_filename="${output_dir}S_NWC_NWP_${year}-${month}-${day}T${hour}:00:00Z_000.grib"
 
         # Move and rename the daily file to the output directory
         mv "$daily_file" "$new_filename"
