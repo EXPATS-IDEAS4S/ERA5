@@ -1,14 +1,20 @@
 #!/bin/bash
 
-# Input GRIB file
-input_grib="/home/daniele/Documenti/PhD_Cologne/Case_Studies/ERA5/Complete_ERA5_global_atmospheric_reanalysis/2021-07-14_merged.grib"
-
-# Output directory
-output_dir="/home/daniele/Documenti/PhD_Cologne/Case_Studies/ERA5/Complete_ERA5_global_atmospheric_reanalysis/"
-
-# Year and Month of the data
+# Date
 year="2021"
 month="07"
+day="16"
+
+# Path
+path_file="/work/NWC_GEO/import/NWP_data/"
+
+# Input GRIB file
+#input_grib="/home/daniele/Documenti/PhD_Cologne/Case_Studies/ERA5/Complete_ERA5_global_atmospheric_reanalysis/2021-07-14_merged.grib"
+input_grib="${path_file}${year}-${month}-${day}_merged.grib"
+
+# Output directory
+#output_dir="/home/daniele/Documenti/PhD_Cologne/Case_Studies/ERA5/Complete_ERA5_global_atmospheric_reanalysis/"
+output_dir="${path_file}"
 
 # Ensure output directory exists
 mkdir -p "$output_dir"
